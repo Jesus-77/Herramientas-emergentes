@@ -1,0 +1,50 @@
+(base) PS C:\Users\yisus> conda activate jvs
+(jvs) PS C:\Users\yisus> cd proyects
+cd : No se encuentra la ruta de acceso 'C:\Users\yisus\proyects' porque no existe.
+En línea: 1 Carácter: 1
++ cd proyects
++ ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\yisus\proyects:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+(jvs) PS C:\Users\yisus> cd proyectos
+(jvs) PS C:\Users\yisus\proyectos> cd proy1
+(jvs) PS C:\Users\yisus\proyectos\proy1> Python --version
+Python 3.10.7
+(jvs) PS C:\Users\yisus\proyectos\proy1> pip list
+Package    Version
+---------- -------
+pip        22.2.2
+setuptools 63.2.0
+(jvs) PS C:\Users\yisus\proyectos\proy1> pip install Django
+Collecting Django
+  Downloading Django-4.1.1-py3-none-any.whl (8.1 MB)
+     ---------------------------------------- 8.1/8.1 MB 612.3 kB/s eta 0:00:00
+Collecting asgiref<4,>=3.5.2
+  Downloading asgiref-3.5.2-py3-none-any.whl (22 kB)
+Collecting tzdata
+  Downloading tzdata-2022.2-py2.py3-none-any.whl (336 kB)
+     ---------------------------------------- 336.4/336.4 kB 342.3 kB/s eta 0:00:00
+Collecting sqlparse>=0.2.2
+  Downloading sqlparse-0.4.2-py3-none-any.whl (42 kB)
+     ---------------------------------------- 42.3/42.3 kB 344.8 kB/s eta 0:00:00
+Installing collected packages: tzdata, sqlparse, asgiref, Django
+Successfully installed Django-4.1.1 asgiref-3.5.2 sqlparse-0.4.2 tzdata-2022.2
+(jvs) PS C:\Users\yisus\proyectos\proy1> Python -m django --version
+4.1.1
+(jvs) PS C:\Users\yisus\proyectos\proy1> dir
+(jvs) PS C:\Users\yisus\proyectos\proy1> dir
+(jvs) PS C:\Users\yisus\proyectos\proy1> django-admin startproject sgi1
+(jvs) PS C:\Users\yisus\proyectos\proy1> dir
+
+
+    Directorio: C:\Users\yisus\proyectos\proy1
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----     14/09/2022  10:06 a. m.                sgi1
+
+
+(jvs) PS C:\Users\yisus\proyectos\proy1> cd sgi1
+(jvs) PS C:\Users\yisus\proyectos\proy1\sgi1> python manage.py runserver

@@ -1,0 +1,105 @@
+*1
+
+Lista1 =[1, 2, 3,"1","2","3",1.0,2.0,3.0]
+print (Lista1)
+print("Contenido de la lista:\n")
+for i in range (len(Lista1)):
+ print (Lista1[i])
+
+
+
+*2
+list1=[1, 2, 3,"1","2","3",1.0,2.0,3.0]
+print(list1[0:6])
+print(list1[:6])
+print(list1[6:])
+
+*3
+L2=[]
+for i in range (10):
+ dato = int (input("Introduce el valor {0}:".format(i)))
+L2.extend([dato])
+
+print(L2)
+for i in range(len(L2)):
+    print(L2[i])
+
+*4
+a = int(input(1))
+b = int(input(2))
+c = int(input(3))
+
+print ("Valores a ={0} b={1} c={2}".format(a,b,c))
+
+
+
+*clases
+class Libro(object):
+ def __init__(self,id,titulo,autor,editorial):
+  self.id=id
+  self.titulo=titulo
+  self.autor=autor
+  self.editorial=editorial
+
+  def __str__(self):
+   return "%s-%s-%s-%s"%\
+        (self.id,self.titulo,self.autor,self.editorial)
+#
+  def __getattribute__ (selft,atrib): 
+   return object.__getattribute__(self,atrib)
+
+# Agregar libros clase Admin
+class LibroAdmin:
+  def __init__(self):
+    self.arreglibros=[]
+    
+  def agregar (self,id,tit,aut,edit):
+    lib=Libro(id,tit,aut,edit)
+    self.arreglibros.append(lib)
+
+# Sobre escritura
+  def in__str__(self):
+   S = ""
+   for libro in self.arreglibros:
+     s+= str(libro)+"\n"
+     return S
+
+# Buscar
+def buscar(self,clave,por="id"):
+  for indice,libro in enumerate(self.arreglibros):
+    if libro.__getattribute__(por)==clave:
+      return indice
+
+# Remover
+def remover(self,clave,por="id"):
+  indice = self.buscar(clave)
+  if indice !=None:
+    self.arreglibros.pop(indice)
+    return indice
+
+# Programa principal
+arreglo = LibroAdmin()
+id = input("Id: ")
+tit = input("Titulo: ")
+aut = input("Autor: ")
+edit = input("Editorial: ")
+arreglo.agregar(id,tit,aut,edit)
+print("\n",arreglo)
+00
+# Buscar un elemeto por Id
+buscando = input("Id del elemento buscar:")
+i = arreglo.buscar(buscando)
+if i!= None:
+  print("Eletnot encontrado en posicion: {0}".format(i))
+else:
+  print("No esxiste el elemento")
+
+
+
+#Remover un elemnto por Id
+elemento = input("Id del elemento a eliminar:")
+i = arreglo.remover(elemento)
+if indice !=None:
+  print("Elemento a remover de la posicion",i)
+else:
+    print("No existe elemento")
